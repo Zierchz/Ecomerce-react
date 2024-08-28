@@ -1,11 +1,11 @@
-function MyAccount() {
+function NotFound() {
 
     return (
       <div className='bg-red-100'>
-        MyAccount
+        NotFound
       </div>
     )
   }
   
-  export default MyAccount
+  export default NotFound
   
