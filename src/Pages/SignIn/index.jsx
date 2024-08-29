@@ -1,12 +1,13 @@
 import Layout from "../../Components/Layout"
 
-function MyAccount() {
+function SignIn() {
+
     return (
       <Layout>
-        MyAccount
+        SignIn
       </Layout>
     )
   }
   
-  export default MyAccount
+  export default SignIn
   

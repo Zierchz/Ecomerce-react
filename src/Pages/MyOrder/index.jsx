@@ -1,12 +1,13 @@
 import Layout from "../../Components/Layout"
 
-function MyAccount() {
+function MyOrder() {
+
     return (
       <Layout>
-        MyAccount
+        MyOrder
       </Layout>
     )
   }
   
-  export default MyAccount
+  export default MyOrder
   
