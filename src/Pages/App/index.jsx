@@ -7,27 +7,31 @@ import MyOrders from '../MyOrders'
 import NotFound from '../NotFound'
 import SignIn from '../SignIn'
 import NavBar from '../../Components/NavBar';
+import { ShoppingCartProvider } from '../../Context'
 
-const AppRoutes = () =>{
+const AppRoutes = () => {
   let routes = useRoutes([
-    {path: '/', element : <Home />},
-    {path: '/my-account', element : <MyAccount />},
-    {path: '/my-order', element : <MyOrder />},
-    {path: '/my-orders', element : <MyOrders />},
-    {path: '/sign-in', element : <SignIn />},
-    {path: '/*', element : <NotFound />},
+    { path: '/', element: <Home /> },
+    { path: '/my-account', element: <MyAccount /> },
+    { path: '/my-order', element: <MyOrder /> },
+    { path: '/my-orders', element: <MyOrders /> },
+    { path: '/sign-in', element: <SignIn /> },
+    { path: '/*', element: <NotFound /> },
   ])
   return routes
 }
 
 function App() {
 
-  
+
   return (
-   <BrowserRouter>
-   <AppRoutes/>
-   <NavBar/>
-   </BrowserRouter>
+    <ShoppingCartProvider>
+      <BrowserRouter>
+        <AppRoutes />
+        <NavBar />
+      </BrowserRouter>
+    </ShoppingCartProvider>
+
   )
 }
 
