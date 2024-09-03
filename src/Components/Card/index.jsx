@@ -32,7 +32,7 @@ const Card = ( data ) => {
                     className='absolute top-0 right-0 flex justify-center items-center bg-white w-10 h-10 rounded-full m-2 p-3 border-2 border-solid border-gray-400
                     transition-all ease-in-out duration-500 hover:scale-125'>
                         <span className="pb-1 text-xl transition-all ease-in-out hover:scale-125 hover:animate-pulse">
-                        <ShoppingBagIcon className="size-6 text-gray-600" />
+                        <ShoppingBagIcon className="size-7 text-emerald-600" />
                         </span>
                         </div>
                         

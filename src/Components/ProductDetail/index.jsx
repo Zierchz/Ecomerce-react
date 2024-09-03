@@ -10,10 +10,10 @@ const ProductDetail = () =>{
     return (
         <aside className={`${context.isProductDetailOpen ? 'flex' : 'hidden'} product-detail flex flex-col fixed bg-white right-0 border-2 
          border-gray-400 rounded-3xl text-gray-700 transition-all ease-in-out duration-300 rounded-r-none  border-r-white`}>
-            <div className='flex justify-between items-center p-6'>
+            <div className='flex justify-between items-center p-6 pr-1'>
                 <h2 className='font-semibold text-2xl'>{context.productToShow.title}</h2>
         <XMarkIcon
-         className='size-8 transition-transform ease-in-out duration-300 hover:scale-150 cursor-pointer border-2 border-gray-500 rounded-full'
+         className='size-8 transition-transform ease-in-out duration-500 hover:scale-150 cursor-pointer flex justify-self-end'
          onClick={context.CloseProductDetail}/>
     </div>
     <figure className="px-6 flex justify-center items-center">
