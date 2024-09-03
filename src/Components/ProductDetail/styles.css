@@ -1,5 +1,5 @@
 .product-detail{
-    width: 360px;
-    height: calc(100vh - 76px);
+    width: 500px;
+    height: auto + 70px;
     top: 76px;
 }
