@@ -9,9 +9,9 @@ const ProductDetail = () =>{
     
     return (
         <aside className={`${context.isProductDetailOpen ? 'flex' : 'hidden'} product-detail flex flex-col fixed bg-white right-0 border-2 
-         border-gray-400 rounded-lg text-gray-700 transition-all ease-in-out duration-300 rounded-r-none`}>
+         border-gray-400 rounded-3xl text-gray-700 transition-all ease-in-out duration-300 rounded-r-none  border-r-white`}>
             <div className='flex justify-between items-center p-6'>
-                <h2 className='font-semibold text-2xl'>Details of the product:</h2>
+                <h2 className='font-semibold text-2xl'>{context.productToShow.title}</h2>
         <XMarkIcon
          className='size-8 transition-transform ease-in-out duration-300 hover:scale-150 cursor-pointer border-2 border-gray-500 rounded-full'
          onClick={context.CloseProductDetail}/>
@@ -26,8 +26,7 @@ const ProductDetail = () =>{
     ) : (<p></p> )}
 </figure>
     <p className="flex flex-col p-6">
-        <span className="font-bold text-xl">{context.productToShow.title}</span>
-        <span className="font-semibold text-lg">Price: ${context.productToShow.price}</span>
+        <span className="font-extrabold text-xl">Price: ${context.productToShow.price}</span>
         <span className="font-medium text-md">{context.productToShow.description}</span>
     </p>
     

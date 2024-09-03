@@ -7,7 +7,17 @@ const Card = ( data ) => {
 
     const showProduct = (product) => {
         context.OpenProductDetail()
+        context.CloseCheckoutSideMenu()
         context.setProductToShow(product)
+    }
+
+    const addProductsToCart = (event, ProductData) => {
+        event.stopPropagation()
+        context.setCount(context.count + 1)
+        context.OpenCheckoutSideMenu()
+        context.CloseProductDetail()
+        context.setCartProducts([...context.cartProducts, ProductData]) 
+        console.log(context.cartProducts)
     }
 
     return(
@@ -18,7 +28,7 @@ const Card = ( data ) => {
                     <img className='w-full h-full object-cover transition-all ease-in-out duration-500 rounded-3xl  border-4 hover:rounded-lg
                      hover:border-gray-400 hover:border-solid' src={data.data.images[0]} alt={data.data.title} />
                     <div 
-                    onClick={()=> context.setCount(context.count + 1)}
+                    onClick={(event)=> addProductsToCart(event, data.data)}
                     className='absolute top-0 right-0 flex justify-center items-center bg-white w-10 h-10 rounded-full m-2 p-3 border-2 border-solid border-gray-400
                     transition-all ease-in-out duration-500 hover:scale-125'>
                         <span className="pb-1 text-xl transition-all ease-in-out hover:scale-125 hover:animate-pulse">

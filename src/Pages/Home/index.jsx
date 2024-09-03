@@ -12,7 +12,7 @@ function Home() {
   return (
     <Layout >
       Home
-      <div className="grid grid-cols-4 w-full max-w-screen-lg items-center justify-items-center bg-gray-100 rounded-md ">
+      <div className="grid grid-cols-4 w-full max-w-screen-lg items-center justify-items-center bg-gray-100 rounded-xl ">
       {
         items?.map( (item) => (
          <Card key={item.id} data={item}/>
