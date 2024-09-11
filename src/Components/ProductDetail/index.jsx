@@ -8,9 +8,10 @@ const ProductDetail = () =>{
     
     
     return (
-        <aside className={`${context.isProductDetailOpen ? 'flex' : 'hidden'} product-detail flex flex-col fixed bg-white right-0 border-2 
-         border-gray-400 rounded-3xl text-gray-700 transition-all ease-in-out duration-300 rounded-r-none  border-r-white`}>
-            <div className='flex justify-between items-center p-6 pr-1'>
+        <aside className={` product-detail flex flex-col fixed bg-white right-0 border-2 shadow-xl
+         border-gray-400 rounded-3xl text-gray-700 rounded-r-none  border-r-white
+         transition-transform duration-500 ease-in-out transform ${context.isProductDetailOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className='flex justify-between items-center pl-6 pr-1 py-3  border-b-2 border-gray-300 bg-gray-100 rounded-tl-3xl'>
                 <h2 className='font-semibold text-2xl'>{context.productToShow.title}</h2>
         <XMarkIcon
          className='size-8 transition-transform ease-in-out duration-500 hover:scale-150 cursor-pointer flex justify-self-end'
@@ -25,7 +26,7 @@ const ProductDetail = () =>{
         />
     ) : (<p></p> )}
 </figure>
-    <p className="flex flex-col p-6">
+    <p className="flex flex-col p-6 border-t-2 border-gray-300 bg-gray-100 rounded-bl-3xl pt-0">
         <span className="font-extrabold text-xl">Price: ${context.productToShow.price}</span>
         <span className="font-medium text-md">{context.productToShow.description}</span>
     </p>
