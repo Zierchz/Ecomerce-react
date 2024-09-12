@@ -30,6 +30,7 @@ const CheckoutSideMenu = () => {
         context.CloseCheckoutSideMenu()
     }
 
+
     return (
         <aside className={`checkout-menu h-4/5 shadow-xl flex flex-col fixed bg-white right-0 border-2 border-gray-400 rounded-3xl text-gray-700 
         transition-transform duration-500 ease-in-out transform ${context.isCheckoutSideMenuOpen ? 'translate-x-0' : 'translate-x-full'} 
@@ -58,14 +59,15 @@ const CheckoutSideMenu = () => {
                         Total: ${TotalPrice(context.cartProducts)}
                     </span>
                 </p>
-                
-                    <Link className="flex justify-center" to="my-orders/last">
-                        <button className=" flex justify-center flex-row w-4/5 bg-green-400 p-1 rounded-md text-xl font-bold transition-all hover:bg-green-500 hover:scale-110 duration-300"
-                            onClick={() => handleCheckout()}>
-                            Checkout
-                        </button>
-                    </Link>
-                
+
+                <Link className="flex justify-center" to={`my-orders/${context.order.length}`}>
+                    <button className="flex justify-center flex-row w-4/5 bg-green-400 p-1 rounded-md text-xl font-bold transition-all hover:bg-green-500 hover:scale-110 duration-300"
+                        onClick={() => handleCheckout()}>
+                        Checkout
+                    </button>
+                </Link>
+
+
             </div>
         </aside>
     )

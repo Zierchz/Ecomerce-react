@@ -15,7 +15,7 @@ const OrderCard = (props) => {
 
                     <img className="w-full min-w-10 h-full rounded-xl rounded-r-sm object-cover border-2 border-gray-500" src={product.images[0]} alt={product.title} />
                 </figure>
-                <p className="text-md font-semibold">{product.title}</p>
+                <p className="text-sm font-semibold">{product.title}</p>
             </div>
             <div className="flex items-center gap-2">
                 <p className="text-lg font-bold">${product.price}</p>

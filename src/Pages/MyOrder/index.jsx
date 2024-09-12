@@ -7,29 +7,33 @@ import { Link } from "react-router-dom";
 
 function MyOrder() {
   const context = useContext(ShoppingCartContext)
-  console.log(context.order)
-
+  const currentPath = window.location.pathname
+  const index = currentPath.substring(currentPath.lastIndexOf('/')+1)
+ 
+  
+  
   return (
     <Layout>
-      <div className="flex items-center mb-2">
-        <Link to={`/my-orders`}>
+      <div className="flex items-center justify-center mb-2 relative w-96">
+        <Link to={`/my-orders`} className="absolute left-0">
         <ChevronLeftIcon className="size-8"/>
         </Link>
         <h1>MyOrder</h1>
       </div>
       
-      <div className="flex flex-col p-4 w-2/6 justify-between text-xl rounded-xl bg-gray-50">
-        {context.order?.slice(-1)[0].products.map(product => (
+      <div className="flex flex-col p-4 w-2/6 justify-between text-md rounded-xl bg-gray-50">
+       
+        {context.order[index]?.products.map(product => (
           <OrderCard product={product} key={product.id} />))}
         <br />
-        <p className="flex items-center justify-between pb-2 text-center font-semibold">
-          <span className="">
-            Products: {context.order?.slice(-1)[0].totalProducts}
+        {context.order.length > 0 ? <p className="flex items-center justify-between pb-2 text-center font-semibold">
+          <span className="pl-3">
+            Products: {context.order[index].totalProducts}
           </span>
           <span className="">
-            Total: ${context.order?.slice(-1)[0].totalPrice}
+            Total: ${context.order[index].totalPrice}
           </span>
-        </p>
+        </p>  : null}
       </div>
     </Layout>
   )
