@@ -50,7 +50,7 @@ const CheckoutSideMenu = () => {
                 }
             </div>
             <div className="p-4 pt-1  text-lg font-bold bg-gray-50 rounded-bl-3xl">
-                <p className="flex items-center justify-between pb-2 text-center">
+                <p className="flex items-center justify-between pb-2 text-center text-green-700">
                     <span className="">
                         Products: {context.cartProducts.length}
                     </span>

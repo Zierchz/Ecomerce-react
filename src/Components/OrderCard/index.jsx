@@ -5,7 +5,7 @@ const OrderCard = (props) => {
     let renderDeleteIcon
     if(handleDelete){
         renderDeleteIcon = <BackspaceIcon onClick={() => handleDelete(product.id)}
-        className='size-5 transition-transform ease-in-out duration-300 hover:scale-125 cursor-pointer'/>
+        className='size-5 transition-transform ease-in-out duration-300 hover:scale-125 cursor-pointer text-green-800'/>
     }
     return (
         <>
@@ -17,8 +17,8 @@ const OrderCard = (props) => {
                 </figure>
                 <p className="text-sm font-semibold">{product.title}</p>
             </div>
-            <div className="flex items-center gap-2">
-                <p className="text-lg font-bold">${product.price}</p>
+            <div className="flex items-center gap-2 ">
+                <p className="text-lg font-bold text-green-600">${product.price}</p>
                 {renderDeleteIcon}
             </div>
             

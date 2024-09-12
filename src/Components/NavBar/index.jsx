@@ -7,10 +7,10 @@ const NavBar = () => {
 
     const activeStyle = 'underline underline-offset-4 ';
     const context = useContext(ShoppingCartContext);
-    const LiClassname = 'transition-all ease-in-out duration-200 hover:underline hover:underline-offset-4 hover:text-gray-500';
+    const LiClassname = 'transition-all ease-in-out duration-200 hover:underline hover:underline-offset-4 hover:text-green-500';
 
     return (
-        <nav className="fixed top-0 z-10 flex items-center justify-between w-full px-8 py-5 font-semibold bg-gray-50">
+        <nav className="fixed top-0 z-10 flex items-center justify-between w-full px-8 py-5 font-semibold bg-gray-50 text-green-700 border-2 border-b-gray-200">
             <ul className="flex items-center gap-3 ">
                 <li className="mr-2 text-2xl font-bold pb-1 ">
                     <NavLink to="/" >

@@ -13,7 +13,7 @@ function Home() {
   return (
     <Layout>
       Home
-      <div className="grid grid-cols-4 w-full max-w-screen-lg items-center bg-gray-50 rounded-xl justify-items-center">
+      <div className="grid grid-cols-4 w-full max-w-screen-lg items-center bg-gray-50 rounded-xl justify-items-center border-4 border-x-gray-200 shadow-xl">
       {
         items?.map( (item) => (
          <Card key={item.id} data={item}/>

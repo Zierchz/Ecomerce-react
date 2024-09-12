@@ -52,7 +52,7 @@ const Card = (data) => {
         <> <div className='w-56 bg-gray-50 cursor-pointer h-60 transition-all ease-in-out duration-500 my-5'
             onClick={() => showProduct(data.data)}>
             <figure className='relative w-full mb-2 h-4/5'>
-                <span className='absolute bottom-0 left-0 text-xs text-black rounded-lg bg-white/60 m-2 px-3 py-0.5 font-semibold'>{data.data.category.name}</span>
+                <span className='absolute bottom-0 left-0 text-xs text-black rounded-lg bg-green-200 m-2 px-3 py-0.5 font-semibold'>{data.data.category.name}</span>
                 <img className='shadow-md w-full h-full object-cover transition-all ease-in-out duration-500 rounded-lg  border-4 border-gray-300 hover:rounded-3xl
                      hover:border-gray-400 hover:border-solid' src={data.data.images[0]} alt={data.data.title} />
                 {renderIcon(data.data.id)}
