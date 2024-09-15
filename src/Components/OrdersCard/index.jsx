@@ -12,7 +12,7 @@ const OrdersCard = ({ order }) => {
             </span>
 
             <span className="flex-grow text-center ">
-                {order.totalProducts} Articles
+            Articles : {order.totalProducts} 
             </span>
             </p>
             <span className="flex-grow text-end order-item font-bold text-3xl text-green-600">

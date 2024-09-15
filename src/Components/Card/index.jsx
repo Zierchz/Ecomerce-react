@@ -49,17 +49,17 @@ const Card = (data) => {
     }
 
     return (
-        <> <div className='w-56 bg-gray-50 cursor-pointer h-60 transition-all ease-in-out duration-500 my-5'
+        <> <div className='w-56   cursor-pointer h-60 transition-all ease-in-out duration-500 my-5'
             onClick={() => showProduct(data.data)}>
             <figure className='relative w-full mb-2 h-4/5'>
                 <span className='absolute bottom-0 left-0 text-xs text-black rounded-lg bg-green-200 m-2 px-3 py-0.5 font-semibold'>{data.data.category.name}</span>
-                <img className='shadow-md w-full h-full object-cover transition-all ease-in-out duration-500 rounded-lg  border-4 border-gray-300 hover:rounded-3xl
+                <img className='shadow-lg w-full h-full object-cover transition-all ease-in-out duration-500 rounded-lg  border-4 border-gray-300 hover:rounded-3xl
                      hover:border-gray-400 hover:border-solid' src={data.data.images[0]} alt={data.data.title} />
                 {renderIcon(data.data.id)}
             </figure>
-            <p className='flex justify-between '>
-                <span className='text-sm font-semibold'>{data.data.title}</span>
-                <span className='text-lg font-bold '>${data.data.price}</span>
+            <p className='flex justify-between text-wrap'>
+                <span className='text-md font-semibold'>{data.data.title}</span>
+                <span className='text-xl font-bold text-green-600'>${data.data.price}</span>
 
             </p>
         </div>

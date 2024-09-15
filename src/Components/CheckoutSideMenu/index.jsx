@@ -50,7 +50,7 @@ const CheckoutSideMenu = () => {
                 }
             </div>
             <div className="p-4 pt-1  text-lg font-bold bg-gray-50 rounded-bl-3xl">
-                <p className="flex items-center justify-between pb-2 text-center text-green-700">
+                <p className="flex items-center justify-between pb-2 text-center text-green-700 text-xl">
                     <span className="">
                         Products: {context.cartProducts.length}
                     </span>
@@ -61,7 +61,8 @@ const CheckoutSideMenu = () => {
                 </p>
 
                 <Link className="flex justify-center" to={`my-orders/${context.order.length}`}>
-                    <button className="flex justify-center flex-row w-4/5 bg-green-400 p-1 rounded-md text-xl font-bold transition-all hover:bg-green-500 hover:scale-110 duration-300"
+                    <button className="flex justify-center flex-row w-4/5 bg-green-400 p-1 rounded-md text-xl font-bold 
+                    transition-all hover:bg-green-500 hover:scale-110 duration-300 border-2 border-gray-300 shadow-lg"
                         onClick={() => handleCheckout()}>
                         Checkout
                     </button>
