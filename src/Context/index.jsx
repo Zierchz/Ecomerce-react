@@ -35,10 +35,9 @@ export const ShoppingCartProvider = ({ children }) => {
 
 
     // Get products by title
-    const [searchByTitle, setSearchByTitle] = useState(null);
+    const [searchByTitle, setSearchByTitle] = useState('');
 
  
-
 
 
     useEffect(() => {

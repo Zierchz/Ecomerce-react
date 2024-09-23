@@ -28,6 +28,9 @@ const CheckoutSideMenu = () => {
         context.setOrder([...context.order, orderToAdd])
         context.setCartProducts([])
         context.CloseCheckoutSideMenu()
+        context.setSearchByTitle('')
+        context.setFilteredItems(context.items)
+        
     }
 
 

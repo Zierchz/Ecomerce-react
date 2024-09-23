@@ -20,7 +20,8 @@ function Home() {
 
   return (
     <Layout>
-        <div className="flex items-center justify-center my-2 relative w-96 text-2xl font-semibold text-green-700">
+      <div className=" z-1 flex flex-col bg-white w-full items-center justify-center">
+        <div className="flex items-center justify-center my-2 w-96 text-2xl font-semibold text-green-700">
         <h1>Exclusive Products For You!</h1>
       </div>
       <div className="flex flex-row items-center">
@@ -31,6 +32,7 @@ function Home() {
         <BackspaceIcon
          className="ml-4 size-8 text-green-800 cursor-pointer "
         onClick={() => context.setSearchByTitle('')}/>
+        </div>
         </div>
       {context.filteredItems?.length >0 ? Cards : <NoResults/>}
      <ProductDetail/>

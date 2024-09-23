@@ -9,15 +9,15 @@ const OrderCard = (props) => {
     }
     return (
         <>
-        <div className="flex justify-between items-center ">
-            <div className="flex items-center gap-2">
-                <figure className="w-20 h-20 p-1 pl-2 ">
+        <div className="flex justify-between">
+            <div className="flex items-center gap-1">
+                <figure className="w-20 h-16 p-1 ">
 
-                    <img className="w-full min-w-10 h-full rounded-xl rounded-r-sm object-cover border-2 border-gray-500" src={product.images[0]} alt={product.title} />
+                    <img className="w-full h-full rounded-xl rounded-r-sm object-cover border-2 border-gray-500" src={product.images[0]} alt={product.title} />
                 </figure>
                 <p className="text-sm font-semibold">{product.title}</p>
             </div>
-            <div className="flex items-center gap-2 ">
+            <div className="flex items-center  gap-2">
                 <p className="text-lg font-bold text-green-600">${product.price}</p>
                 {renderDeleteIcon}
             </div>
