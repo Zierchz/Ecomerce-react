@@ -9,6 +9,60 @@ const NavBar = () => {
     const context = useContext(ShoppingCartContext);
     const LiClassname = 'transition-all ease-in-out duration-200 hover:underline hover:underline-offset-4 hover:text-green-500';
 
+    // Sign Out
+    const signOut = localStorage.getItem('sign-out')
+    const parsedSignOut = JSON.parse(signOut)
+    const isUserSignOut = context.signOut || parsedSignOut
+
+    const handleSignOut = () => {
+        const stringifiedSignOut = JSON.stringify(true)
+        localStorage.setItem('sign-out', stringifiedSignOut)
+        context.setSignOut(true)
+    }
+
+    const RenderView = () => {
+        if(isUserSignOut){
+            return(
+                <li className={LiClassname}>
+                    <NavLink to="/sign-in" className={({ isActive }) => isActive ? activeStyle : undefined}
+                    onClick={()=> handleSignOut()}>
+                        Sign In
+                    </NavLink>
+                </li>
+            )
+        }
+        else{
+            return(
+                <>
+                <li className="text-black/60 cursor-default"> 
+                leonardosuarez@gmail.com
+            </li>
+            <li className={LiClassname}>
+                <NavLink to="/my-orders" className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    My Orders
+                </NavLink>
+            </li>
+            <li className={LiClassname}>
+                <NavLink to="/my-account" className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    My Account
+                </NavLink>
+            </li>
+            <li className={LiClassname}>
+                <NavLink to="/sign-in" className={({ isActive }) => isActive ? activeStyle : undefined}
+                onClick={()=> handleSignOut()}>
+                    Sign Out
+                </NavLink>
+            </li>
+            <li className="flex items-center justify-between text-lg cursor-pointer hover:text-green-500" >
+                <ShoppingCartIcon 
+                onClick={context.isCheckoutSideMenuOpen ? () => context.CloseCheckoutSideMenu() : () => {context.OpenCheckoutSideMenu(); context.CloseProductDetail()}}
+                className="size-6 " />{context.cartProducts.length}
+            </li>
+            </>
+            )
+        }
+    }
+
     return (
         <nav className="fixed shadow-lg top-0 z-10 flex items-center justify-between w-full px-8 py-5 font-semibold bg-gray-50 text-green-700 border-2 border-b-gray-200">
             <ul className="flex items-center gap-3 ">
@@ -49,29 +103,8 @@ const NavBar = () => {
                 </li>
             </ul>
             <ul className="flex items-center gap-3">
-                <li className="text-black/60 cursor-default"> 
-                    leonardosuarez@gmail.com
-                </li>
-                <li className={LiClassname}>
-                    <NavLink to="/my-orders" className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        My Orders
-                    </NavLink>
-                </li>
-                <li className={LiClassname}>
-                    <NavLink to="/my-account" className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        My Account
-                    </NavLink>
-                </li>
-                <li className={LiClassname}>
-                    <NavLink to="/sign-in" className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        Sign In
-                    </NavLink>
-                </li>
-                <li className="flex items-center justify-between text-lg cursor-pointer hover:text-green-500" >
-                    <ShoppingCartIcon 
-                    onClick={context.isCheckoutSideMenuOpen ? () => context.CloseCheckoutSideMenu() : () => {context.OpenCheckoutSideMenu(); context.CloseProductDetail()}}
-                    className="size-6 " />{context.cartProducts.length}
-                </li>
+            <RenderView/>
+               
             </ul>
         </nav>
     )
